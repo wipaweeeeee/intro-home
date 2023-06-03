@@ -1,0 +1,213 @@
+//color variables
+$paper: #FFF7E1;
+$black: #000000;
+$orange: #DC4E27;
+$green: #CBEC9C;
+$yellow-light: #FFF063;
+$yellow-dark: #FFC700;
+$red: #EC362E;
+$blue: #BCE5F6;
+
+//breakpoint variables
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+//font-face
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Book.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Book Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Medium Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Acumin Pro';
+  src: url('/assets/fonts/Acumin Pro Semibold Italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'IvyPresto Display';
+  src: url('/assets/fonts/IvyPresto Display Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'IvyPresto Display';
+  src: url('/assets/fonts/IvyPresto Display Light Italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+//typeface mixins
+@mixin display-1 {
+  	font-family: 'Acumin Pro';
+	font-size: 9.375rem;
+	font-weight: 500;
+	line-height: 6.25rem;
+	letter-spacing: -0.05em;
+}
+
+@mixin display-2 {
+  	font-family: 'Acumin Pro';
+	font-size: 6.25rem;
+	font-weight: 500;
+	line-height: 6.25rem;
+	letter-spacing: -0.05em;
+}
+
+@mixin display-3 {
+  	font-family: 'Acumin Pro';
+	font-size: 3.75rem;
+	font-weight: 500;
+	line-height: 3.75rem;
+	letter-spacing: -0.05em;
+}
+
+@mixin body-1 {
+  	font-family: 'Acumin Pro';
+	font-size: 1.75rem;
+	font-weight: 400;
+	line-height: 1.75rem;
+	letter-spacing: -0.02em;
+}
+
+@mixin body-2 {
+  	font-family: 'Acumin Pro';
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 1.75rem;
+}
+
+@mixin body-3 {
+	font-family: 'Acumin Pro';
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+}
+
+@mixin label-1 {
+	font-family: 'Acumin Pro';
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+	text-transform: uppercase;
+}
+
+@mixin label-2 {
+	font-family: 'Acumin Pro';
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.125rem;
+}
+
+@mixin label-3 {
+	font-family: 'Acumin Pro';
+	font-size: 0.625rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+}
+
+@mixin button-1 {
+	font-family: 'Acumin Pro';
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 2.375rem;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+}
+
+@mixin button-2 {
+	font-family: 'Acumin Pro';
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+}
+
+@mixin button-3 {
+	font-family: 'Acumin Pro';
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.375rem;
+	letter-spacing: 0em;
+	text-transform: uppercase;
+}
+
+@mixin editorial-1 {
+	font-family: 'IvyPresto Display';
+	font-size: 4.5rem;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 4.5rem;
+}
+
+@mixin editorial-2 {
+	font-family: 'IvyPresto Display';
+	font-size: 3.75rem;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 3.75rem;
+}
+
+@mixin editorial-3 {
+	font-family: 'IvyPresto Display';
+	font-size: 3rem;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 3.75rem;
+	letter-spacing: -0.02em;
+}
+
+@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+   @mixin body-2 {
+	  	font-family: 'Acumin Pro';
+		font-size: 3rem;
+		font-weight: 400;
+		line-height: 1.75rem;
+	}
+}
+	

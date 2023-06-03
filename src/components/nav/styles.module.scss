@@ -1,0 +1,90 @@
+.navContainer {
+	@include button-2;
+	background-color: $black;
+	height: 80px;
+	color: $paper;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	position: sticky;
+	top: 0;
+
+	.list {
+		width: 70%;
+		max-width: 800px;
+		display: flex;
+		justify-content: space-between;
+		list-style-type: none;
+
+		li {
+			position: relative;
+
+			&:before {
+			 	content: "";
+			  	position: absolute;
+			  	display: block;
+			  	width: 0;
+			  	height: 1px;
+			  	bottom: -1px;
+			  	left: 0;
+			  	background-color: $paper;
+			  	transition: width 0.2s ease;
+			}
+
+			&:hover {
+				&:before {
+					width: 100%;
+					transition: width 0.2s ease;
+				}
+			}
+
+			&.active {
+				width: 100%;
+			}
+
+		}
+	}
+
+	.lang { 
+		//only place with this type treatment
+		font-family: IvyPresto Display;
+		font-size: 1.25rem;
+		font-weight: 400;
+		line-height: 1rem;
+		letter-spacing: 0.04em;
+		display: flex;
+
+		.dot {
+			margin: 0 10px;
+		}
+
+		.active {
+			padding-bottom: 4px;
+    		border-bottom: 1px solid $paper;
+		}
+	}
+}
+
+@include tablet {
+	.navContainer {
+		height: 68px;
+		.logo {
+			width: 90px;
+		}
+
+		.list {
+			width: 80%;
+			max-width: 600px;
+		}
+	}
+}
+
+@include mobile { 
+	.navContainer {
+		height: 50px;
+		.logo {
+			width: 68px;
+		}
+	}
+}
