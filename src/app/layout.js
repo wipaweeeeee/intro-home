@@ -1,4 +1,5 @@
 import './globals.scss'
+import { AppContextProvider } from '../config/Store';
 import Nav from '../components/Nav';
 
 export const metadata = {
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Nav />
-        {children}
+        <AppContextProvider>
+          <Nav />
+          {children}
+        </AppContextProvider>
       </body>
     </html>
   )

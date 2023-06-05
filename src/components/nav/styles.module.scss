@@ -40,7 +40,9 @@
 			}
 
 			&.active {
-				width: 100%;
+				&:before { 
+					width: 100%;
+				}
 			}
 
 		}
@@ -54,6 +56,7 @@
 		line-height: 1rem;
 		letter-spacing: 0.04em;
 		display: flex;
+		cursor: pointer;
 
 		.dot {
 			margin: 0 10px;
@@ -71,6 +74,7 @@
 		height: 68px;
 		.logo {
 			width: 90px;
+			height: auto;
 		}
 
 		.list {
@@ -83,8 +87,55 @@
 @include mobile { 
 	.navContainer {
 		height: 50px;
+
 		.logo {
-			width: 68px;
+			width: 80px;
+			height: auto;
+		}
+
+		.mobMenuContainer {
+			@include button-1;
+			background-color: $black;
+			width: 100%;
+			height: calc(100vh - 50px);
+    		position: absolute;
+    		left: 100%;
+    		top: 50px;
+    		border-top: 1px solid $paper;
+    		z-index: 999;
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: space-between;
+    		transition: left 200ms ease-in;
+
+    		&.open {
+    			left: 0;
+    			transition: left 200ms ease-in;
+    		}
+
+    		.listMob {
+    			display: flex;
+			    flex-direction: column;
+			    justify-content: space-between;
+			    list-style-type: none;
+			    width: 100%;
+
+			    li {
+			    	width: 100%;
+			    	padding: 24px 20px 0;
+
+			    	&.active {
+			    		a {
+			    			border-bottom: 1px solid $paper;
+			    			padding-bottom: 2px;
+			    		}
+					}
+			    }
+    		}
+
+    		.lang {
+    			padding: 20px;
+    		}
 		}
 	}
 }
