@@ -202,12 +202,28 @@ $desktop-width: 1024px;
 	letter-spacing: -0.02em;
 }
 
-@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-   @mixin body-2 {
-	  	font-family: 'Acumin Pro';
-		font-size: 3rem;
-		font-weight: 400;
-		line-height: 1.75rem;
-	}
+//helper classes
+
+//spaces
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
+}
+
+.mb-60 {
+	margin-bottom: 60px;
+}
+
+
+//typography
+.caps {
+	text-transform: uppercase;
+}
+
+.display-3 {
+	@include display-3;
 }
 	
