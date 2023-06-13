@@ -213,8 +213,26 @@ $desktop-width: 1024px;
 	margin-bottom: 20px;
 }
 
+.mb-40 {
+	margin-bottom: 40px;
+}
+
 .mb-60 {
 	margin-bottom: 60px;
+}
+
+@include mobile {
+	.mb-20 {
+		margin-bottom: 10px;
+	}
+
+	.mb-40 {
+		margin-bottom: 20px;
+	}
+
+	.mb-60 {
+		margin-bottom: 30px;
+	}
 }
 
 

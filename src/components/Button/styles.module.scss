@@ -32,3 +32,10 @@
 		}
 	}
 }
+
+@include mobile {  
+	.button {
+		width: 220px;
+		height: 40px;
+	}
+}

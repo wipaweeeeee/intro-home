@@ -1,25 +1,23 @@
 import styles from './styles.module.scss';
-import Image from 'next/image'
 import classNames from 'classnames';
+import Image from 'next/image';
 
-const HeroHalf = ({color, image, children}) => {
+const ContentHalf = ({color, image, children}) => {
 	return (
-		<div className={styles.heroHalfContainer}>
-			<div className={classNames(styles.content, styles[color])}>
-				{children}
-			</div>
+		<div className={classNames(styles.contentHalfContainer, styles[color])}>
 			<div className={styles.imageContainer}>
 				<Image
 	              	src={`/assets/images/${image}.jpg`}
 	              	alt={image}
-	              	width={720}
-	              	height={688}
+	              	width={450}
+	              	height={450}
 	              	priority
 	              	className={styles.image}
 	            />
 			</div>
+			<div className={styles.content}>{children}</div>
 		</div>
 	)
 }
 
-export default HeroHalf;
+export default ContentHalf;

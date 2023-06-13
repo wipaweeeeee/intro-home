@@ -1,0 +1,21 @@
+.tag {
+	padding: 10px 28px;
+	border-radius: 36px;
+	text-transform: uppercase;
+	@include label-2;
+
+	&.default {
+		background-color: $orange;
+		color: $paper;
+	}
+
+	&.paper {
+		background-color: $paper;
+		color: $red;
+	}
+
+	&.yellow {
+		background-color: $yellow-light;
+		color: $black;
+	}
+}

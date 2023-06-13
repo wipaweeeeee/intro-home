@@ -9,6 +9,7 @@
 	padding: 0 20px;
 	position: sticky;
 	top: 0;
+	z-index: 999;
 
 	.list {
 		width: 70%;
@@ -72,6 +73,7 @@
 @include tablet {
 	.navContainer {
 		height: 68px;
+		
 		.logo {
 			width: 90px;
 			height: auto;
@@ -87,6 +89,7 @@
 @include mobile { 
 	.navContainer {
 		height: 50px;
+		padding: 0 12px;
 
 		.logo {
 			width: 80px;
