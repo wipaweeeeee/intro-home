@@ -106,6 +106,14 @@ $desktop-width: 1024px;
 	letter-spacing: -0.05em;
 }
 
+@mixin display-4 {
+  	font-family: 'Acumin Pro';
+	font-size: 3rem;
+	font-weight: 400;
+	line-height: 3rem;
+	letter-spacing: -0.05em;
+}
+
 @mixin body-1 {
   	font-family: 'Acumin Pro';
 	font-size: 1.75rem;
@@ -239,6 +247,10 @@ $desktop-width: 1024px;
 //typography
 .caps {
 	text-transform: uppercase;
+}
+
+.display-1 {
+	@include display-1;
 }
 
 .display-3 {

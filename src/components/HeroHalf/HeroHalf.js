@@ -2,21 +2,30 @@ import styles from './styles.module.scss';
 import Image from 'next/image'
 import classNames from 'classnames';
 
-const HeroHalf = ({color, image, children}) => {
+const HeroHalf = ({color, image, video, children}) => {
 	return (
 		<div className={styles.heroHalfContainer}>
 			<div className={classNames(styles.content, styles[color])}>
 				{children}
 			</div>
 			<div className={styles.imageContainer}>
-				<Image
-	              	src={`/assets/images/${image}.jpg`}
-	              	alt={image}
-	              	width={720}
-	              	height={688}
-	              	priority
-	              	className={styles.image}
-	            />
+				{
+					image && 
+						<Image
+		              	src={`/assets/images/${image}.jpg`}
+		              	alt={image}
+		              	width={720}
+		              	height={688}
+		              	priority
+		              	className={styles.image}
+		            />
+				}
+				{
+					video && 
+					<video className={classNames(styles.image, styles.video)} autoPlay muted loop>
+					  <source src={`/assets/images/${video}.mp4`} type="video/mp4" />
+					</video>
+				}
 			</div>
 		</div>
 	)
