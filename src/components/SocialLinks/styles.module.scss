@@ -1,0 +1,27 @@
+.socialLinksContainer {
+	list-style-type: none;
+	display: flex;
+
+	&.light {
+		color: $paper
+	}
+
+	&.dark {
+		color: $black
+	}
+
+	li {
+		@include button-1;
+		display: flex;
+		align-items: flex-start;
+		margin-right: 40px;
+
+		&:last-child {
+			margin: 0;
+		}
+
+		svg {
+			padding-left: 6px;
+		}
+	}
+}

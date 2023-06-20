@@ -253,7 +253,19 @@ $desktop-width: 1024px;
 	@include display-1;
 }
 
+.display-2 {
+	@include display-2;
+}
+
 .display-3 {
 	@include display-3;
+}
+
+.editorial-1 {
+	@include editorial-1;
+}
+
+.body-2 {
+	@include body-2;
 }
 	

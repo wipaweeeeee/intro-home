@@ -2,9 +2,9 @@ import styles from './styles.module.scss';
 import Image from 'next/image'
 import classNames from 'classnames';
 
-const HeroHalf = ({color, image, video, children}) => {
+const HeroHalf = ({color, image, video, className, children}) => {
 	return (
-		<div className={styles.heroHalfContainer}>
+		<div className={classNames(styles.heroHalfContainer, className)}>
 			<div className={classNames(styles.content, styles[color])}>
 				{children}
 			</div>
@@ -22,7 +22,7 @@ const HeroHalf = ({color, image, video, children}) => {
 				}
 				{
 					video && 
-					<video className={classNames(styles.image, styles.video)} autoPlay muted loop>
+					<video className={classNames(styles.image, styles.video)} muted loop>
 					  <source src={`/assets/images/${video}.mp4`} type="video/mp4" />
 					</video>
 				}
