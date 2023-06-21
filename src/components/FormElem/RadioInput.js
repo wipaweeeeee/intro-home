@@ -1,9 +1,7 @@
 import styles from './styles.module.scss';
 import { useForm } from "react-hook-form";
 
-const RadioInput = ({ type }) => {
-
-	const { register } = useForm();
+const RadioInput = ({ type, register }) => {
 
 	let options = [];
 	if (type == 'locations') {

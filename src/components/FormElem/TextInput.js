@@ -1,9 +1,7 @@
 import styles from './styles.module.scss';
 import { useForm } from "react-hook-form";
 
-const TextInput = ({ label, type = "text" }) => {
-
-	const { register, formState: { errors } } = useForm();
+const TextInput = ({ label, type = "text", register }) => {
 
 	let placeholder;
 	if (label == "first name") {
@@ -19,7 +17,7 @@ const TextInput = ({ label, type = "text" }) => {
 	return (
 		<label className={styles.label}>
 			<span>{label}</span>
-			<input type={type} {...register(label)} placeholder={placeholder}/>
+			<input {...register(label)} type={type} placeholder={placeholder}/>
 		</label>
 	)
 }

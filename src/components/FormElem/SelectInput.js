@@ -1,9 +1,7 @@
 import styles from './styles.module.scss';
 import { useForm } from "react-hook-form";
 
-const SelectInput = ({ label, options }) => {
-
-	const { register } = useForm();
+const SelectInput = ({ label, options, register }) => {
 
 	let optionItems = options.map((item, index) => {
 		return (

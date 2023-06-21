@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import HeroHalf from '../components/HeroHalf'
 import Button from '../components/Button'
 import SocialLinks from '../components/SocialLinks';
 import classNames from 'classnames';
 import Link from 'next/link';
-import Form from '../components/Form';
+import FormHalf from '../components/FormHalf';
 
 const growData = [
   {
@@ -32,6 +32,8 @@ const growData = [
 export default function Home() {
 
   const [ trackWidth, setTrackWidth ] = useState();
+  const [ selectedCourse, setSelectedCourse ] = useState();
+  const [ openForm, setOpenForm ] = useState(false);
 
   useEffect(() => {
     let width = window.innerWidth / 2;
@@ -52,12 +54,23 @@ export default function Home() {
     // },
   };
 
+  const handleCourseSelect = (title) => {
+    setSelectedCourse(title);
+    setOpenForm(true);
+  }
+
+  const handleClose = () => {
+    setSelectedCourse(null);
+    setOpenForm(false)
+  }
+
+  const selectedCourseData = growData.filter(item => item.title == selectedCourse)[0];
 
   const growList = growData.map((item, index) => {
     return (
-      <li key={index}>
+      <li key={index} className={classNames(styles.listItem, {[styles.selected] : item.title == selectedCourse})} onClick={() => handleCourseSelect(item.title)}>
         <span>{item.title}</span>
-        <Image src={`/assets/images/arrowCircle.svg`} alt={'arrow'} width={32} height={32} />
+        <Image src={`/assets/images/arrowCircle${selectedCourse == item.title ? '_filled' : ''}.svg`} alt={'arrow'} width={32} height={32} />
       </li>
     )
   })
@@ -137,14 +150,32 @@ export default function Home() {
           </ul>
         </div>
         <div className={styles.right}>
-          {/*<Image
+          <Image
             src={`/assets/images/grow.jpg`}
             alt={'grow'}
             width={500}
             height={270}
             className={styles.growImage}
-          />*/}
-          <Form />
+          />
+          <AnimatePresence>
+            {
+              openForm && (
+                <motion.div 
+                  className={styles.form}
+                  initial={{ x: '100%' }}
+                  animate={{ x: '0', transition: { duration: 0.25, ease: 'easeIn' }}}
+                  exit={{ x: '100%', transition: { duration: 0.25, ease: 'easeOut' }}}
+                >
+                  <Image className={styles.close} onClick={handleClose} src={`/assets/images/closeIcon.svg`} alt={'close'} width={16} height={16} />
+                  <FormHalf 
+                    title={selectedCourseData && selectedCourseData.formTitle} 
+                    desc={selectedCourseData && selectedCourseData.content} 
+                    formTitle={selectedCourse}
+                  />
+                </motion.div>
+              )
+            }
+          </AnimatePresence>
         </div>
       </div>
     </div>

@@ -49,7 +49,7 @@ const Nav = () => {
 		            		<Link href="/about">{data.about}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/intro-life"})}>
-		            		<Link href="">{data.intro_life}</Link>
+		            		<Link href="intro-life">{data.intro_life}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/connect"})}>
 		            		<Link href="">{data.connect}</Link>
@@ -95,7 +95,7 @@ const Nav = () => {
 			            		<Link href="/about">{data.about}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/intro-life"})}>
-			            		<Link href="">{data.intro_life}</Link>
+			            		<Link href="intro-life">{data.intro_life}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/connect"})}>
 			            		<Link href="">{data.connect}</Link>

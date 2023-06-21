@@ -1,0 +1,34 @@
+.label {
+	display: flex;
+	flex-direction: column;
+	padding: 12px 20px;
+	border-top: 1px solid black;
+
+	span {
+		@include label-3;
+		text-transform: uppercase;
+	}
+}
+
+.radioContainer {
+	display: flex;
+	border-top: 1px solid black;
+
+	.label {
+		flex-direction: row;
+		align-items: center;
+		padding: 20px 20px;
+		margin-right: 20px;
+		border: none;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		span {
+			@include body-3;
+			text-transform: capitalize;
+			margin-left: 8px;
+		}
+	}
+}
