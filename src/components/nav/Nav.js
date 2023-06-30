@@ -58,7 +58,7 @@ const Nav = () => {
 		            		<Link href="">{data.what_to_expect}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/donate"})}>
-		            		<Link href="">{data.donate}</Link>
+		            		<Link href="/giving">{data.donate}</Link>
 		            	</li>
 		            </ul>
 		            <div className={styles.lang}>

@@ -19,7 +19,7 @@
 		}
 	}
 
-	&.secondary {
+	&.secondary-light {
 		background-color: transparent;
 		color: $paper;
 		border: 2px solid $paper;
@@ -28,6 +28,19 @@
 		&:hover {
 			background-color: $paper;
 			color: $black;
+			transition: all 200ms ease-in;
+		}
+	}
+
+	&.secondary-dark {
+		background-color: transparent;
+		color: $black;
+		border: 2px solid $black;
+		transition: all 200ms ease-in;
+
+		&:hover {
+			background-color: $black;
+			color: $paper;
 			transition: all 200ms ease-in;
 		}
 	}

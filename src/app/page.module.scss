@@ -168,6 +168,7 @@
         align-items: flex-end;
         position: absolute;
         left: 0;
+        top: 0;
 
         .close {
           position: absolute;
@@ -176,6 +177,45 @@
           cursor: pointer;
         }
       }
+    }
+  }
+
+  .pray {
+    background-color: $paper;
+    padding: 60px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .image {
+      width: 80%;
+      max-width: 1088px;
+      height: auto;
+    }
+
+    .content {
+      display: flex;
+      margin-top: 40px;
+
+      p {
+        max-width: 280px;
+        margin-left: 60px;
+      }
+    }
+  }
+
+  .giving {
+    background-color: $green;
+    padding: 60px 20px;
+
+    .title {
+      display: flex;
+      align-items: baseline;
+    }
+
+    p {
+      max-width: 528px;
     }
   }
 }

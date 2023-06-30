@@ -22,7 +22,7 @@ const HeroHalf = ({color, image, video, className, children}) => {
 				}
 				{
 					video && 
-					<video className={classNames(styles.image, styles.video)} muted loop>
+					<video className={classNames(styles.image, styles.video)} muted autoPlay loop>
 					  <source src={`/assets/images/${video}.mp4`} type="video/mp4" />
 					</video>
 				}

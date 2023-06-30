@@ -1,6 +1,7 @@
 import './globals.scss'
 import { AppContextProvider } from '../config/Store';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <AppContextProvider>
           <Nav />
           {children}
+          <Footer />
         </AppContextProvider>
       </body>
     </html>
