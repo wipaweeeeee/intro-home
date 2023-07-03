@@ -1,0 +1,45 @@
+.quoteHalfContainer {
+	display: flex;
+
+	.left, .right {
+		padding: 120px 0;
+		width: 50%;
+		@include editorial-3;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.left {
+		background-color: $green;
+		color: $black;
+
+		.title {
+			border-bottom: 1px solid black;
+			margin: 0 auto 40px;
+			width: max-content;
+		}
+	}
+
+	.right {
+		background-color: $black;
+		color: $green;
+
+		.title {
+			border-bottom: 1px solid $green;
+			margin: 0 auto 40px;
+			width: max-content;
+		}
+	}
+}
+
+@include mobile { 
+	.quoteHalfContainer { 
+		flex-direction: column;
+
+		.left, .right {
+			width: 100%;
+		}
+	}
+}

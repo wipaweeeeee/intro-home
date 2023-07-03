@@ -3,6 +3,7 @@
 	border-radius: 36px;
 	text-transform: uppercase;
 	@include label-2;
+	width: max-content;
 
 	&.default {
 		background-color: $orange;

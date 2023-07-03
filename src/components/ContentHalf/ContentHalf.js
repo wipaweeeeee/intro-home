@@ -1,11 +1,12 @@
 import styles from './styles.module.scss';
 import classNames from 'classnames';
 import Image from 'next/image';
+import AnimateDiv from '../AnimateDiv';
 
 const ContentHalf = ({color, image, children}) => {
 	return (
 		<div className={classNames(styles.contentHalfContainer, styles[color])}>
-			<div className={styles.imageContainer}>
+			<AnimateDiv className={styles.imageContainer}>
 				<Image
 	              	src={`/assets/images/${image}.jpg`}
 	              	alt={image}
@@ -14,8 +15,8 @@ const ContentHalf = ({color, image, children}) => {
 	              	priority
 	              	className={styles.image}
 	            />
-			</div>
-			<div className={styles.content}>{children}</div>
+			</AnimateDiv>
+			<AnimateDiv className={styles.content}>{children}</AnimateDiv>
 		</div>
 	)
 }

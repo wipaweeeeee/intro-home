@@ -9,7 +9,51 @@ let content = {
       So, we are looking forward to the journey ahead to launch Intro Home Bucharest. <br /><br />
       Contact Daniel & Alina
       Email: contact@introhome.ro
-      Phone: +40 752 327 212</span>
+      Phone: +40 752 327 212</span>,
+    helpTitle: "How can i make a difference?",
+    helpOneTitle: "Partner with us financially",
+    helpOneContent: "It takes significant finances to reach significant cities. Bucharest is as significant as it gets. Stand with us by giving a one-off gift or setting up monthly giving.",
+    helpOneCTA: "make a difference",
+    helpTwoTitle: "Join the launch team",
+    helpTwoContent: "The vision God has laid on our heart is far bigger than something we can do alone. We need a diverse team to stand together, serve together and outwork the dream God put on our hearts, together.",
+    helpTwoCTA: "join the team",
+    helpThreeTitle: "Partner with us in prayer",
+    helpThreeContent: "If you can make your dream happen, you are not dreaming big enough. Our dream, Intro Home Bucharest, can’t be achieved by human effort. The only way we can have the impact we dream of is by a move of God.",
+    quoteLeftTitle: "Our Vision",
+    quoteLeftContent: "To introduce people into a relationship with God, practicing Kingdom life to impact the city.",
+    quoteRightTitle: "Our Mission",
+    quoteRightContent: <span>Know God<br />Find freedom<br />Discover purpose<br />Make a difference</span>,
+    valuesTitle: "values",
+    values: [
+      { count: "01",
+        title: "People are our passion",
+        content: "Everyone is welcome, accepted and included regardless of faith, beliefs and behavior. It is a church for people, not for Christians"
+      },
+      { count: "02",
+        title: "Excellence is our aim",
+        content: "Excellence always inspires people and honors God"
+      },
+      { count: "03",
+        title: "Enthusiasm is our choice",
+        content: "Because we love Jesus, we obey Him and live to bring people into a personal relationship with Jesus Christ"
+      },
+      { count: "04",
+        title: "Minister is our calling",
+        content: "We were each created to contribute to the well-being of others and we have everything we need to make a difference through active involvement in community life"
+      },
+      { count: "05",
+        title: "Jesus is the center of the community",
+        content: "Because we love Jesus, we obey Him and live to bring people into a personal relationship with Jesus Christ"
+      },
+      { count: "06",
+        title: "Generosity is our privilege",
+        content: "We accelerate the vision of the local church by being generous with our time and financial resources"
+      },
+      { count: "07",
+        title: "Empowerment is our mission",
+        content: "We make passionate disciples, develop genuine leaders, and equip people to bring change to their spheres of influence"
+      },
+    ]
   },
   ro: {
     

@@ -210,6 +210,15 @@ $desktop-width: 1024px;
 	letter-spacing: -0.02em;
 }
 
+@mixin editorial-4 {
+	font-family: 'IvyPresto Display';
+	font-size: 2rem;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 2rem;
+	letter-spacing: -0.02em;
+}
+
 //helper classes
 
 //spaces
@@ -279,6 +288,18 @@ $desktop-width: 1024px;
 
 .editorial-1 {
 	@include editorial-1;
+}
+
+.editorial-2 {
+	@include editorial-2;
+}
+
+.editorial-3 {
+	@include editorial-3;
+}
+
+.editorial-4 {
+	@include editorial-4;
 }
 
 .body-2 {
