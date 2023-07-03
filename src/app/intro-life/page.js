@@ -17,7 +17,7 @@ export default function IntroLife() {
         <Tag variant="paper" className="mb-40">outreach</Tag>
         <h1 className="display-3 mb-40">I Love My City</h1>
         <p className="mb-60">“I Love My City” is an outreach expression of our church and on the second Saturday of each month, teams come together through groups to serve the city. This initiative is designed for people to demonstrate God’s love in practical ways by serving others through a variety of outreach projects. We want to come along side organisations that are meeting needs in the city so we can have a bigger impact.</p>
-        <Button variant="secondary">get involved</Button>
+        <Button variant="secondary-light">get involved</Button>
       </ContentHalf>
       <Banner color="yellow-dark" icon="star">we don't babysit we raise leaders</Banner>
     </main>

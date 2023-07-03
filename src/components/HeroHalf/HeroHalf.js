@@ -8,18 +8,7 @@ const HeroHalf = ({color, image, video, className, children}) => {
 			<div className={classNames(styles.content, styles[color])}>
 				{children}
 			</div>
-			<div className={styles.imageContainer}>
-				{
-					image && 
-						<Image
-		              	src={`/assets/images/${image}.jpg`}
-		              	alt={image}
-		              	width={720}
-		              	height={688}
-		              	priority
-		              	className={styles.image}
-		            />
-				}
+			<div className={styles.imageContainer} style={{backgroundImage: `url(/assets/images/${image}.jpg)`}}>
 				{
 					video && 
 					<video className={classNames(styles.image, styles.video)} muted autoPlay loop>

@@ -22,4 +22,60 @@
 			padding-left: 12px;
 		}
 	}
+
+	.content {
+		display: flex;
+		padding: 60px 20px;
+		justify-content: space-between;
+
+		.title {
+			width: 25%;
+			max-width: 220px;
+		}
+
+		.options {
+			width: 70%;
+			display: flex;
+			justify-content: space-between;
+
+			.option {
+				text-align: center;
+				max-width: 300px;
+				margin-right: 60px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.download {
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		margin-bottom: 60px;
+
+		.image {
+			width: 50%;
+			height: 325px;
+			max-width: 646px;
+			border-radius: 24px;
+			overflow: hidden;
+			position: relative;
+
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		.downloadContent {
+			width: 50%;
+			padding-left: 60px;
+
+		}
+	}
 }

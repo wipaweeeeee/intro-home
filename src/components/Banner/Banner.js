@@ -6,7 +6,7 @@ const Banner = ({color, icon, children}) => {
 	return (
 		<div className={classNames(styles.bannerContainer, styles[color])}>
 			<Image
-              	src={`/assets/images/${icon}.svg`}
+              	src={`/assets/images/${icon}.${icon == "globe" ? 'png' : 'svg'}`}
               	alt={icon}
               	width={24}
               	height={24}
@@ -15,7 +15,7 @@ const Banner = ({color, icon, children}) => {
             />
 			<span>{children}</span>
 			<Image
-              	src={`/assets/images/${icon}.svg`}
+              	src={`/assets/images/${icon}.${icon == "globe" ? 'png' : 'svg'}`}
               	alt={icon}
               	width={24}
               	height={24}
