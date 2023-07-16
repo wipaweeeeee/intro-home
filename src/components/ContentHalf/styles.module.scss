@@ -10,6 +10,11 @@
 		color: $paper;
 	}
 
+	&.yellow {
+		background-color: $yellow-light;
+		color: $black;
+	}
+
 	.imageContainer {
 		width: 450px;
 		height: 450px;

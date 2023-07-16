@@ -25,14 +25,17 @@ const Footer = () => {
 					<p className='label-2'>44 Lorem Ipsum St. Dolor AM 11011</p>
 				</div>
 			</div>
-			<ul className={styles.links}>
-				<li><Link href="/locations">Locations</Link></li>
-				<li><Link href="/about">about</Link></li>
-				<li><Link href="/intro-life">intro life</Link></li>
-				<li><Link href="/connect">connect</Link></li>
-				<li><Link href="/what-to-expect">what to expect</Link></li>
-				<li><Link href="/giving">donate</Link></li>
-			</ul>
+			<div className={styles.bookend}>
+				<ul className={styles.links}>
+					<li><Link href="/locations">Locations</Link></li>
+					<li><Link href="/about">about</Link></li>
+					<li><Link href="/intro-life">intro life</Link></li>
+					<li><Link href="/connect">connect</Link></li>
+					<li><Link href="/what-to-expect">what to expect</Link></li>
+					<li><Link href="/giving">donate</Link></li>
+				</ul>
+				<span>© All rights reserved. Intro Home 2023.</span>
+			</div>
 		</div>
 	)
 }

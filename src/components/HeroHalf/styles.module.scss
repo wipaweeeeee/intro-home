@@ -29,6 +29,11 @@
 		&.yellow-light {
 			background-color:$yellow-light;
 		}
+
+		&.black {
+			background-color:$black;
+			color: $paper;
+		}
 	}
 
 	.imageContainer {

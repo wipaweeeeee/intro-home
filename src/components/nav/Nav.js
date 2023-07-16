@@ -49,13 +49,13 @@ const Nav = () => {
 		            		<Link href="/about">{data.about}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/intro-life"})}>
-		            		<Link href="intro-life">{data.intro_life}</Link>
+		            		<Link href="/intro-life">{data.intro_life}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/connect"})}>
-		            		<Link href="">{data.connect}</Link>
+		            		<Link href="/connect">{data.connect}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/what-to-expect"})}>
-		            		<Link href="">{data.what_to_expect}</Link>
+		            		<Link href="/what-to-expect">{data.what_to_expect}</Link>
 		            	</li>
 		            	<li className={classNames({[styles.active] : currentPage == "/giving"})}>
 		            		<Link href="/giving">{data.donate}</Link>
@@ -89,7 +89,7 @@ const Nav = () => {
 		            <div className={classNames(styles.mobMenuContainer, {[styles.open] : open})}>
 		            	<ul className={styles.listMob}>
 			            	<li className={classNames({[styles.active] : currentPage == "/locations"})}>
-			            		<Link href="">{data.locations}</Link>
+			            		<Link href="/locations">{data.locations}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/about"})}>
 			            		<Link href="/about">{data.about}</Link>
@@ -98,13 +98,13 @@ const Nav = () => {
 			            		<Link href="intro-life">{data.intro_life}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/connect"})}>
-			            		<Link href="">{data.connect}</Link>
+			            		<Link href="/connect">{data.connect}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/what-to-expect"})}>
-			            		<Link href="">{data.what_to_expect}</Link>
+			            		<Link href="/what-to-expect">{data.what_to_expect}</Link>
 			            	</li>
 			            	<li className={classNames({[styles.active] : currentPage == "/donate"})}>
-			            		<Link href="">{data.donate}</Link>
+			            		<Link href="/donate">{data.donate}</Link>
 			            	</li>
 			            </ul>
 			            <div className={styles.lang}>

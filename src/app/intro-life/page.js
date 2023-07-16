@@ -1,3 +1,5 @@
+'use client'
+
 import HeroHalf from '../../components/HeroHalf'
 import ContentHalf from '../../components/ContentHalf'
 import Button from '../../components/Button'

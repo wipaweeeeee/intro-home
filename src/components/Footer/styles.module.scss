@@ -18,15 +18,24 @@
 		p { max-width: 120px; }
 	}
 
-	.links {
-		list-style-type: none;
-		text-transform: uppercase;
-		@include label-2;
-		margin-top: 80px;
+	.bookend {
 		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: baseline;
+		text-transform: uppercase;
 
-		li {
-			margin-right: 40px;
+		.links {
+			list-style-type: none;
+			text-transform: uppercase;
+			@include label-2;
+			margin-top: 80px;
+			display: flex;
+
+			li {
+				margin-right: 40px;
+				cursor: pointer;
+			}
 		}
 	}
 }

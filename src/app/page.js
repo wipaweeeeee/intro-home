@@ -57,7 +57,6 @@ export default function Home() {
   const selectedCourseData = data.growForm.filter(item => item.title == selectedCourse)[0];
 
   const growList = data.growForm.map((item, index) => {
-    console.log(item.title)
     return (
       <li key={index} className={classNames(styles.listItem, {[styles.selected] : item.title == selectedCourse})} onClick={() => handleCourseSelect(item.title)}>
         <span>{item.title}</span>

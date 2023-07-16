@@ -1,0 +1,201 @@
+.heroContent {
+	text-align: center;
+	max-width: 90%;
+
+	.celebrate {
+		position: relative;
+
+		&:after {
+			content: url('/assets/images/underline.svg');
+			position: absolute;
+			bottom: -12px;
+			left: 0;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.everyone {
+		position: relative;
+
+		&:after {
+			content: url('/assets/images/circle.svg');
+			position: absolute;
+			bottom: -10px;
+			left: -40px;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.vision {
+	background-color: $paper;
+	padding: 60px 20px;
+	position: relative;
+	overflow: hidden;
+
+	.visionContent {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.columnContainer {
+			width: calc(33% - 60px);
+			z-index: 1;
+
+			&.second {
+				margin-left: calc(33% + 60px);
+			}
+
+			&.third {
+				margin-left: calc(66% + 60px);
+			}
+
+			.column {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.lineTop {
+		position: absolute;
+		top: -20%;
+		left: 0;
+		z-index: 0;
+		transform: translateX(-37%) rotate(-22deg);
+		width: 100vw;
+		height: auto;
+	}
+
+	.lineBottom {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+		transform: scaleY(0.8) translateX(-10%);
+		width: 100vw;
+		height: auto;
+	}
+}
+
+.mission {
+	background-color: $orange;
+	color: $paper;
+	padding: 120px 20px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	.blob {
+		position: absolute;
+		right: -20%;
+		top: -20%;
+	}
+
+	.blobSmall {
+		position: absolute;
+		left: -10%;
+		top: 0%;
+		width: 40%;
+		transform: rotate(120deg);
+
+		svg {
+			width: 100%;
+		}
+	}
+
+	p {
+	 	width: 80%;
+	 	margin: 0 auto;
+	}
+}
+
+.values {
+	padding: 60px 20px;
+
+	.valueRow {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		.valueItem {
+			width: calc(25% - 60px);
+			margin-right: 60px;
+			margin-bottom: 60px;
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.splitContainer {
+		display: flex;
+		justify-content: space-between;
+
+		.splitColumn {
+			width: 45%;
+
+			p {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+.notes {
+	background-color: $paper;
+	padding: 20px 0;
+
+	div {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+
+		img { margin: 40px 0 }
+
+		p {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@include tablet {
+	.heroContent { 
+		.celebrate {
+			&:after {
+				max-width: 220px;
+				overflow: hidden;
+			}
+		}
+
+		.everyone {
+			&:after {
+				transform: scale(0.9);
+			}
+		}
+	}
+}
+
+@include mobile {
+	.heroContent { 
+		.celebrate {
+			&:after {
+				max-width: 206px;
+				overflow: hidden;
+			}
+		}
+
+		.everyone {
+			&:after {
+				width: 100%;
+				height: 100%;
+				bottom: 12px;
+				left: -45px;
+				transform: scale(0.8);
+			}
+		}
+	}
+}

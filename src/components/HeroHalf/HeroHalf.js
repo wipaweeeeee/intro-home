@@ -1,6 +1,7 @@
 import styles from './styles.module.scss';
 import Image from 'next/image'
 import classNames from 'classnames';
+import { motion } from "framer-motion";
 
 const HeroHalf = ({color, image, video, className, children}) => {
 	return (
@@ -8,14 +9,20 @@ const HeroHalf = ({color, image, video, className, children}) => {
 			<div className={classNames(styles.content, styles[color])}>
 				{children}
 			</div>
-			<div className={styles.imageContainer} style={{backgroundImage: `url(/assets/images/${image}.jpg)`}}>
+			<motion.div 
+				initial={{ opacity: 0 }}
+        		whileInView={{ opacity: 1, transition: { duration: 0.45, ease: 'easeIn' }}}
+        		viewport={{ once: true }}
+				className={styles.imageContainer} 
+				style={{backgroundImage: `url(/assets/images/${image}.jpg)`}}
+			>
 				{
 					video && 
 					<video className={classNames(styles.image, styles.video)} muted autoPlay loop>
-					  <source src={`/assets/images/${video}.mp4`} type="video/mp4" />
+					  <source src={`/assets/videos/${video}.mp4`} type="video/mp4" />
 					</video>
 				}
-			</div>
+			</motion.div>
 		</div>
 	)
 }
