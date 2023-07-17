@@ -1,0 +1,85 @@
+.formContainer {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: rgba($paper, 0.98);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+
+	.formFields {
+		width: 70%;
+		max-width: 760px;
+		border: 1px solid black;
+
+		.intro {
+			padding: 20px 20px;
+			background-color: $black;
+			color: $paper;
+		}
+
+		.desc {
+			padding: 20px;
+		}
+
+		.row {
+			display: flex;
+			width: 100%;
+
+			label {
+				width: 100%;
+			}
+
+			&.half {
+				label {
+					width: 50%;
+
+					&:last-child {
+						border-left: 1px solid black;
+					}
+				}
+			}
+		}
+
+		.buttonContainer {
+			display: flex;
+			justify-content: flex-end;
+			padding: 20px 20px ;
+			border-top: 1px solid black; 
+
+			.button {
+				@include body-3;
+				padding-top: 3px;
+				cursor: pointer;
+				width: 140px;
+				height: 40px;
+				border: 2px solid black;
+				border-radius: 999px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-transform: uppercase;
+				background-color: $black;
+				color: $paper;
+
+				&:first-child {
+					margin-right: 20px;
+					background-color: transparent;
+					color: $black;
+				}
+			}
+		}
+	}
+}

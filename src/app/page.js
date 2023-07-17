@@ -13,13 +13,20 @@ import FormHalf from '../components/FormHalf';
 import AnimateDiv from '../components/AnimateDiv';
 import { useAppContext } from '../config/Store';
 import content from './content.js';
+import Form from '../components/Form';
 
 export default function Home() {
 
+  const { appContext }  = useAppContext();
   const [ trackWidth, setTrackWidth ] = useState();
   const [ selectedCourse, setSelectedCourse ] = useState();
   const [ openForm, setOpenForm ] = useState(false);
-  const { appContext }  = useAppContext();
+  const [ forms, setForms ] = useState({
+    visit: false,
+    group: false,
+    prayer: false
+  })
+  
 
   let data = content[appContext.lang];
 
@@ -78,9 +85,19 @@ export default function Home() {
         <h1 className={classNames("display-1 caps", styles.heroTitle)}>church</h1>
         <div className={styles.heroContent}>
           <p className="body-2 mb-40">{data.heroContent}</p>
-          <Button variant="primary">{data.planVisit}</Button>
+          <Button variant="primary" onClick={() => setForms({ ...forms, visit: true })}>{data.planVisit}</Button>
         </div> 
       </HeroHalf>
+      <Form 
+        id="visit" 
+        show={forms.visit} 
+        handleClose={() => setForms({ ...forms, visit: false })}
+        title="plan your visit"
+        formTitle="visit"
+        desc="We invite you to experience a community that accepts and loves anyone even before meeting her or him."
+        cities
+        locations
+      />
       <div className={styles.connect}>
         <AnimateDiv>
           <div className={styles.title}>{data.connect} {data.withUs}</div>
@@ -129,9 +146,21 @@ export default function Home() {
               height={668}
             />
           </div>
-          <div className={styles.cta}><Button variant="primary">{data.groupsCTA}</Button></div>
+          <div className={styles.cta}>
+            <Button variant="primary"  onClick={() => setForms({ ...forms, group: true })}>{data.groupsCTA}</Button>
+          </div>
         </AnimateDiv>
       </div>
+      <Form 
+        id="group" 
+        show={forms.group} 
+        handleClose={() => setForms({ ...forms, group: false })}
+        title="JOIN A GROUP!"
+        formTitle="group"
+        desc="Experience the friendship, growth and the joy of belonging to the place you have always looked for."
+        cities
+        locations
+      />
       <div className={styles.grow}>
         <div className={styles.left}>
           <AnimateDiv>

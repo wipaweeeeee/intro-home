@@ -9,10 +9,7 @@ const HeroHalf = ({color, image, video, className, children}) => {
 			<div className={classNames(styles.content, styles[color])}>
 				{children}
 			</div>
-			<motion.div 
-				initial={{ opacity: 0 }}
-        		whileInView={{ opacity: 1, transition: { duration: 0.45, ease: 'easeIn' }}}
-        		viewport={{ once: true }}
+			<div 
 				className={styles.imageContainer} 
 				style={{backgroundImage: `url(/assets/images/${image}.jpg)`}}
 			>
@@ -22,7 +19,7 @@ const HeroHalf = ({color, image, video, className, children}) => {
 					  <source src={`/assets/videos/${video}.mp4`} type="video/mp4" />
 					</video>
 				}
-			</motion.div>
+			</div>
 		</div>
 	)
 }
