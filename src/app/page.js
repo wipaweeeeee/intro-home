@@ -113,7 +113,7 @@ export default function Home() {
           </div>
           <div className={styles.content}>
             <div className={styles.left}>
-              <Button variant="primary">{data.newToIntro}</Button>
+              <Link href="/new"><Button variant="primary">{data.newToIntro}</Button></Link>
               <p>{data.connectContent}</p>
             </div>
             <SocialLinks />
@@ -226,7 +226,7 @@ export default function Home() {
               />
           </div>
           <p className="mb-60">{data.givingContent}</p>
-          <Button variant="secondary-dark">{data.givingCTA}</Button>
+          <Link href="/giving"><Button variant="secondary-dark">{data.givingCTA}</Button></Link>
         </AnimateDiv>
       </div>
     </div>
