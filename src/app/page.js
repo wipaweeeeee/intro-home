@@ -92,9 +92,9 @@ export default function Home() {
         id="visit" 
         show={forms.visit} 
         handleClose={() => setForms({ ...forms, visit: false })}
-        title="plan your visit"
+        title={data.visitFormTitle}
         formTitle="visit"
-        desc="We invite you to experience a community that accepts and loves anyone even before meeting her or him."
+        desc={data.visitonFormContent}
         cities
         locations
       />
@@ -155,9 +155,9 @@ export default function Home() {
         id="group" 
         show={forms.group} 
         handleClose={() => setForms({ ...forms, group: false })}
-        title="JOIN A GROUP!"
+        title={data.groupsFormTitle}
         formTitle="group"
-        desc="Experience the friendship, growth and the joy of belonging to the place you have always looked for."
+        desc={data.groupsFormContent}
         cities
         locations
       />
@@ -209,11 +209,21 @@ export default function Home() {
         <AnimateDiv style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <Image src='/assets/images/pray.png' alt={'pray'} width={1088} height={380} className={styles.image}/>
           <div className={styles.content}>
-            <Button variant='secondary-dark'>{data.prayCTA}</Button>
+            <Button variant='secondary-dark' onClick={() => setForms({ ...forms, prayer: true })}>{data.prayCTA}</Button>
             <p>{data.prayContent}</p>
           </div>
         </AnimateDiv>
       </div>
+      <Form 
+        id="prayer-requiest" 
+        show={forms.prayer} 
+        handleClose={() => setForms({ ...forms, prayer: false })}
+        title={data.prayFormTitle}
+        formTitle="prayer request"
+        desc={data.prayFormContent}
+        message
+        prayers
+      />
       <div className={styles.giving}>
         <AnimateDiv>
           <div className={styles.title}>

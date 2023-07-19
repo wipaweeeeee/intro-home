@@ -7,23 +7,21 @@ import Button from '../Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import classNames from 'classnames';
 
-//TODO: add required, validation? potentially animate presence is the problem
+const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations, phone, message, prayers }) => {
 
-const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations, phone, message }) => {
+	const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm();
 
-	const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful }, } = useForm();
+	let errorCount = Object.keys(errors).length;
 
-	const onSubmit = (data, errors) => {
-		if (isSubmitSuccessful) {
-			let formData = Object.assign({formTitle: formTitle}, data);
-			console.log(formData);
-		} else {
-			console.log('error')
-		}
+	const onSubmit = (data) => {
+
+		//TODO: handle form data 
+		let formData = Object.assign({formTitle: formTitle}, data);
+		console.log(formData);
 	}
 
 	return (
-		<AnimatePresence>
+			<AnimatePresence>
 		{
 			show && (
 				<motion.div
@@ -40,16 +38,20 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 						</div>
 						<p className={styles.desc}>{desc}</p>
 						<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-							<div className={classNames(styles.row, styles.half)}>
-								<TextInput label="first name" register={register} />
-								<TextInput label="last name" register={register} />
+							<div className={styles.row}>
+								<TextInput label="firstname" required register={register} errors={errors} />
+								<TextInput label="lastname" required register={register} errors={errors} />
 							</div>
-							<div className={classNames(styles.row, {[styles.half] : phone})}>
-								<TextInput label="email" type="email" register={register} />
+							<div className={styles.row}>
+								<TextInput label="email" required register={register} errors={errors}  />
 								{ phone && 
-									<TextInput label="phoneNumber" register={register} />
+									<TextInput label="phonenumber" register={register} errors={errors} />
 								}
 							</div>
+							{
+								message &&
+								<textarea className={styles.textArea} {...register('message', { required: true } )} placeholder="Prayer Message..." />
+							}
 							{
 								cities && 
 								<SelectInput label="city" options={["Bucharest", "Cluj"]} register={register} />
@@ -57,9 +59,12 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 							{
 								locations && <RadioInput type="locations" register={register} />
 							}
-							
+							{
+								prayers && <RadioInput type="prayers" register={register} />
+							}
 							<div className={styles.buttonContainer}>
-								<div className={styles.button} onClick={() => reset()}>cancel</div>
+								{ errorCount > 0 && <div className={styles.errorMessage}>Required fields not completed</div> }
+								<div className={classNames(styles.button, styles.cancel)} onClick={() => reset()}>cancel</div>
 								<input className={styles.button} type="submit" value="send" /> 
 							</div>
 						</form>

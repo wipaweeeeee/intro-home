@@ -10,13 +10,15 @@ const SelectInput = ({ label, options, register }) => {
 	})
 
 	return (
-		<label className={styles.label}>
-			<span>{label}</span>
-			<select {...register(label)}>
-				<option value="none" defaultValue>Choose a city</option>
-				{optionItems}
-			</select>
-		</label>
+		<div className={styles.selectContainer}>
+			<label className={styles.label}>
+				<span>{label}</span>
+				<select {...register(label)}>
+					<option value="none" defaultValue>Choose a city</option>
+					{optionItems}
+				</select>
+			</label>
+		</div>
 	)
 }
 

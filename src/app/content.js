@@ -2,6 +2,8 @@ let content = {
   en: {
     heroContent: <span>Experience God, find your purpose and <br /> make a difference into society!</span>,
     planVisit: "plan your visit",
+    visitFormTitle: "plan your visit",
+    visitFormContent: "We invite you to experience a community that accepts and loves anyone even before meeting her or him.",
     connect: <span>connect</span>,
     withUs:  <span>with us</span> ,
     newToIntro: "new to intro",
@@ -9,6 +11,8 @@ let content = {
     groupsTitle: <span>intro<br/>groups</span>,
     groupsContent: "Intro Groups are the roots of our church. We wish you to connect with other people, find your place in the community, make new friends and grow your relationship with Jesus. Intro Groups are small groups with maximum 10-12 members who meet constantly in different locations or online. With the help of Intro Groups we're building a familiar setting, we enjoy life together with one another and learn more about Jesus.",
     groupsCTA: "join a group",
+    groupsFormTitle: "JOIN A GROUP!",
+    groupsFormContent: "Experience the friendship, growth and the joy of belonging to the place you have always looked for.",
     growTitle: <span>Let’s grow<br/>spiritually &<br/>develop other<br/>areas of your life</span>,
     growForm: [
       {
@@ -30,6 +34,8 @@ let content = {
     growResource: "resources",
     prayCTA: "Send Prayer Request",
     prayContent: "We want to pray for you. Send your prayer request online so that our team can pray with you.",
+    prayFormTitle: "PRAYER REQUEST",
+    prayFormContent: "We all go through different seasons in life, while some are great, others can be really difficult. God gives us a method to change situations and gives us comfort through the power of prayer. Having others to support you in prayer for your needs, dreams and your pain can bring new hope for the future. We invite you to send your prayer request online so that our team can pray with you.",
     givingTitle: "giving",
     givingContent: "Generosity is our way to respond to Jesus's love and everything He had done for us. Join us for a real impact into the society.",
     givingCTA: "donate",

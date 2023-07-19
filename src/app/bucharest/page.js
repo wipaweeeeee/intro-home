@@ -14,6 +14,8 @@ import QuoteHalf from '../../components/QuoteHalf';
 import Banner from '../../components/Banner';
 import BannerArrow from '../../components/BannerArrow';
 import Tag from '../../components/Tag';
+import Link from 'next/link';
+import Form from '../../components/Form';
 
 //TODO: add in correct links
 
@@ -21,6 +23,8 @@ export default function Bucharest() {
 
   const { appContext }  = useAppContext();
   let data = content[appContext.lang];
+
+  const [ showForm, setShowForm ] = useState(false);
 
   const values = data.values.map((item, index) => {
     return (
@@ -31,7 +35,6 @@ export default function Bucharest() {
       </div>
     )
   })
-
 
   return ( 
     <>
@@ -50,7 +53,7 @@ export default function Bucharest() {
         <AnimateDiv className={styles.text}>
           <h2 className="editorial-3 mb-40">{data.helpOneTitle}</h2>
           <p className="mb-40">{data.helpOneContent}</p>
-          <Button variant="secondary-dark">{data.helpOneCTA}</Button>
+          <Link href="/giving"><Button variant="secondary-dark">{data.helpOneCTA}</Button></Link>
         </AnimateDiv>
         <AnimateDiv className={styles.image}>
           <Image src={`/assets/images/ellipsis.png`} alt={'ellipsis'} width={416} height={203} />
@@ -61,7 +64,17 @@ export default function Bucharest() {
         <AnimateDiv className={styles.text}>
           <h2 className="editorial-3 mb-40">{data.helpTwoTitle}</h2>
           <p className="mb-40">{data.helpTwoContent}</p>
-          <Button variant="secondary-dark">{data.helpTwoCTA}</Button>
+          <Button variant="secondary-dark" onClick={() => setShowForm(true)}>{data.helpTwoCTA}</Button>
+          <Form 
+            id="bucharest lauch team" 
+            show={showForm} 
+            handleClose={() => setShowForm(false)}
+            title={data.formTitle}
+            formTitle="bucharest lauch team"
+            desc={data.formContent}
+            message
+            phone
+          />
         </AnimateDiv>
         <AnimateDiv className={styles.text}>
           <h2 className="editorial-3 mb-40">{data.helpThreeTitle}</h2>

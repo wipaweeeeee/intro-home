@@ -1,12 +1,89 @@
-.label {
-	display: flex;
-	flex-direction: column;
-	padding: 12px 20px;
-	border-top: 1px solid black;
+// .label {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 12px 20px;
+// 	border-top: 1px solid black;
 
-	span {
+// 	span {
+// 		@include label-3;
+// 		text-transform: uppercase;
+// 	}
+// }
+
+.inputContainer {
+	width: 100%; 
+	border-top: 1px solid black;
+	padding: 12px 20px;
+
+	&.rightBorder {
+		border-right: 1px solid black;
+	}
+
+	&.leftBorder {
+		border-left: 1px solid black;
+	}
+
+	&.error {
+		border-bottom: 2px solid #ff3347;
+	}
+
+	.label {
 		@include label-3;
 		text-transform: uppercase;
+
+		&.required {
+			&:after {
+				content: '*';
+				margin-left: 4px;
+			}
+		}
+	}
+
+	.input {
+		border-image: none;
+		display: block;
+		width: 100%;
+		
+		color: black;
+
+		&:invalid {
+			border-color: #ff3347;
+		}
+
+		&:required {
+			border-color: black;
+		}
+
+		&::placeholder {
+			color: rgba(black, 0.5);
+		}
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	.errorMessage {
+		margin-top: 8px;
+		color: #ff3347;
+	}
+
+	.subText {
+		font-size: 16px;
+	}
+}
+
+.selectContainer {
+	.label {
+		display: flex;
+		flex-direction: column;
+		padding: 12px 20px;
+		border-top: 1px solid black;
+
+		span {
+			@include label-3;
+			text-transform: uppercase;
+		}
 	}
 }
 
@@ -15,6 +92,7 @@
 	border-top: 1px solid black;
 
 	.label {
+		display: flex;
 		flex-direction: row;
 		align-items: center;
 		padding: 20px 20px;

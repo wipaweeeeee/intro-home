@@ -6,6 +6,8 @@ const RadioInput = ({ type, register }) => {
 	let options = [];
 	if (type == 'locations') {
 		options = [ "on-site", "online", "international" ];
+	} else if (type == 'prayers') {
+		options = [ "prayer request", "prayer report", "talk to a pastor" ];
 	}
 
 	let optionItems = options.map((item, index) => {

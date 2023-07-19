@@ -17,6 +17,8 @@ let content = {
     helpTwoTitle: "Join the launch team",
     helpTwoContent: "The vision God has laid on our heart is far bigger than something we can do alone. We need a diverse team to stand together, serve together and outwork the dream God put on our hearts, together.",
     helpTwoCTA: "join the team",
+    formTitle: "JOIN INTRO HOME BUCHAREST LAUNCH TEAM",
+    formContent: "The vision God has laid on our heart is far bigger than something we can do alone. We need a diverse team to stand together, serve together and outwork the dream God put on our hearts, together.",
     helpThreeTitle: "Partner with us in prayer",
     helpThreeContent: "If you can make your dream happen, you are not dreaming big enough. Our dream, Intro Home Bucharest, can’t be achieved by human effort. The only way we can have the impact we dream of is by a move of God.",
     quoteLeftTitle: "Our Vision",
