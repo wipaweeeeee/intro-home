@@ -36,7 +36,7 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 						<div className={styles.intro}>
 							<h3 className="body-2 caps">{title}</h3>
 						</div>
-						<p className={styles.desc}>{desc}</p>
+						{ desc && <p className={styles.desc}>{desc}</p> }
 						<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 							<div className={styles.row}>
 								<TextInput label="firstname" required register={register} errors={errors} />
@@ -50,7 +50,7 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 							</div>
 							{
 								message &&
-								<textarea className={styles.textArea} {...register('message', { required: true } )} placeholder="Prayer Message..." />
+								<textarea className={styles.textArea} {...register('message', { required: true } )} placeholder="Anything you'd like to tell us..." />
 							}
 							{
 								cities && 
