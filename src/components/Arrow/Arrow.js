@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './styles.module.scss';
 
 const Arrow = () => {
 
@@ -6,6 +7,7 @@ const Arrow = () => {
 
 	return (
 		<svg 
+			className={styles.arrow}
 			onMouseOver={() => setHover(true)}
 			onMouseOut={() => setHover(false)}
 			width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"

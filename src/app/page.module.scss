@@ -219,3 +219,166 @@
     }
   }
 }
+
+@include tablet {
+  .main {
+    .hero {
+      .track {
+        top: 20px;
+      }
+
+      .heroTitle {
+        top: 100px;
+      }
+    }
+
+    .connect { 
+      .content {
+        .left {
+          display: flex;
+          flex-direction: column-reverse;
+
+          p {
+            margin-left: 0px;
+            margin-bottom: 20px;
+            max-width: 320px;
+          }
+
+        }
+      }
+    }
+
+    .groups {
+      .title {
+        p {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    .grow {
+      .right {
+        .growImage {
+          width: 85%;
+          height: auto;
+        }
+      }
+    }
+
+    .giving {
+      img {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .main {
+    .hero {
+      .track {
+        top: 20px;
+      }
+
+      .heroTitle {
+        top: 100px;
+      }
+
+      .heroContent {
+        position: unset;
+        margin-top: auto;
+      }
+    }
+
+    .connect {
+      .imageContainer {
+        margin-top: 12px;
+        margin-bottom: 8px;
+        width: calc(150% + 40px)
+      }
+
+      .content {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+
+        .left {
+          flex-direction: column-reverse;
+
+          p {
+            margin: 20px 0;
+            max-width: none;
+          }
+        }
+      }
+    }
+
+    .groups {
+      .title {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+
+        p {
+          margin: 8px 0;
+        }
+      }
+
+      .options {
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        img {
+          width: 70%;
+          margin: 0 auto 40px; 
+        }
+      }
+    }
+
+    .grow {
+      flex-direction: column;
+
+      .right {
+        display: none;
+      }
+
+      .left {
+        width: 100%;
+        border-right: none;
+
+        .title {
+          margin-bottom: 60px;
+        }
+      }
+    }
+
+    .pray {
+      padding: 48px 0;
+
+      .image {
+        width: calc(100% - 40px);
+      }
+
+      .content {
+        flex-direction: column-reverse;
+        margin: 20px 20px;
+
+        p {
+          margin: 0 0 20px;
+          max-width: none;
+        }
+      }
+    }
+
+    .giving {
+      padding: 48px 20px;
+
+      .title {
+        img {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}

@@ -22,10 +22,10 @@ const FormHalf = ({ title, desc, formTitle }) => {
 			</div>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.row}>
-					<TextInput label="first name" register={register} />
-					<TextInput label="last name" register={register} />
+					<TextInput label="firstname" required register={register} errors={errors} />
+					<TextInput label="lastname" required register={register} errors={errors} />
 				</div>
-				<TextInput label="email" type="email" register={register} />
+				<TextInput label="email" type="email" required register={register} errors={errors}/>
 				<SelectInput label="city" options={['Bucharest', 'Cluj']} register={register} />
 				<RadioInput type="locations" register={register} />
 				<div className={styles.buttonContainer}>

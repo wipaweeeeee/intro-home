@@ -14,6 +14,7 @@ import AnimateDiv from '../components/AnimateDiv';
 import { useAppContext } from '../config/Store';
 import content from './content.js';
 import Form from '../components/Form';
+import Arrow from '../components/Arrow';
 
 export default function Home() {
 
@@ -67,7 +68,7 @@ export default function Home() {
     return (
       <li key={index} className={classNames(styles.listItem, {[styles.selected] : item.title == selectedCourse})} onClick={() => handleCourseSelect(item.title)}>
         <span>{item.title}</span>
-        <Image src={`/assets/images/arrowCircle${selectedCourse == item.title ? '_filled' : ''}.svg`} alt={'arrow'} width={32} height={32} />
+        <Arrow onClick={() => handleCourseSelect(item.title)}/>
       </li>
     )
   })
@@ -169,7 +170,7 @@ export default function Home() {
             {growList}
             <li>
               <Link href="" target="_blank">{data.growResource}</Link>
-              <Image src={`/assets/images/arrowCircle.svg`} alt={'arrow'} width={32} height={32} />
+              <Arrow />
             </li>
           </ul>
           </AnimateDiv>

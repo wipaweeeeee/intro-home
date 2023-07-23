@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const AnimateLine = ({ className }) => {
 	return (
 		<div className={className}>
-			<motion.svg width="1437" height="462" viewBox="0 0 1437 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<motion.svg width="1437" height="462" viewBox="0 0 1437 462" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
 				<motion.path 
 					initial={{ pathLength: 0 }}
 					animate={{ pathLength: 1 }}

@@ -83,11 +83,19 @@ $desktop-width: 1024px;
 
 //typeface mixins
 @mixin display-1 {
-  	font-family: 'Acumin Pro';
+  font-family: 'Acumin Pro';
 	font-size: 9.375rem;
 	font-weight: 500;
 	line-height: 6.25rem;
 	letter-spacing: -0.05em;
+
+	@include tablet {
+		font-size: 6.5rem;
+	}
+
+	@include mobile {
+		font-size: 6.5rem;
+	}
 }
 
 @mixin display-2 {
@@ -96,6 +104,16 @@ $desktop-width: 1024px;
 	font-weight: 500;
 	line-height: 6.25rem;
 	letter-spacing: -0.05em;
+
+	@include tablet {
+		font-size: 4.5rem;
+		line-height: 4.5rem;
+	}
+
+	@include mobile {
+		font-size: 2.75rem;
+		line-height: 2.75rem;
+	}
 }
 
 @mixin display-3 {
@@ -165,6 +183,14 @@ $desktop-width: 1024px;
 	line-height: 2.375rem;
 	letter-spacing: -0.02em;
 	text-transform: uppercase;
+
+	@include tablet {
+		font-size: 1.5rem;
+	}
+
+	@include mobile {
+		font-size: 1.5rem;
+	}
 }
 
 @mixin button-2 {
@@ -174,6 +200,10 @@ $desktop-width: 1024px;
 	line-height: 1.25rem;
 	letter-spacing: -0.02em;
 	text-transform: uppercase;
+
+	@include tablet {
+		font-size: 1rem;
+	}
 }
 
 @mixin button-3 {
@@ -191,6 +221,10 @@ $desktop-width: 1024px;
 	font-style: italic;
 	font-weight: 300;
 	line-height: 5.25rem;
+
+	@include mobile {
+		font-size: 4rem;
+	}
 }
 
 @mixin editorial-2 {

@@ -39,3 +39,23 @@
 		}
 	}
 }
+
+@include mobile {
+	.footerContainer { 
+		padding-top: 48px;
+		
+		.bookend {
+			align-items: flex-start;
+    		flex-direction: column;
+
+    		.links {
+    			flex-direction: column;
+    			margin-bottom: 20px;
+
+    			li {
+    				margin-bottom: 4px;
+    			}
+    		}
+		}
+	}
+}

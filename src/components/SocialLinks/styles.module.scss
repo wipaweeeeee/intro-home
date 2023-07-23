@@ -25,3 +25,28 @@
 		}
 	}
 }
+
+@include tablet {
+	.socialLinksContainer { 
+		li {
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.socialLinksContainer { 
+		li {
+
+			align-items: center;
+
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+}
