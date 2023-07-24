@@ -85,3 +85,15 @@
 		}
 	}
 }
+
+@include mobile {
+	.formContainer {
+		.formFields {
+			width: calc(100% - 40px);
+
+			.row {
+				flex-direction: column;
+			}
+		}
+	}
+}

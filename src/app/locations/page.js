@@ -20,7 +20,7 @@ export default function Locations() {
   const router = useRouter();
 
   return ( 
-      <AnimateDiv style={{display: 'flex'}}> 
+      <AnimateDiv className={styles.locationPage}> 
         <div className={styles.leftRail}>
           <h1 className="display-3 caps">{data.titleOne}</h1>
           <h1 className="display-3 caps">{data.titleTwo}</h1>

@@ -118,3 +118,87 @@
 		}
 	}
 }
+
+@include tablet {
+	.hero {
+		.heroContent {
+			padding: 0 48px;
+		}
+	}
+
+	.nextSteps {
+		.stepsContainer {
+			margin-bottom: 60px;
+
+			.image {
+				width: 430px;
+				height: 216px;
+			}
+		}
+	}
+
+	.alpha {
+		.video {
+			width: 400px;
+    		height: 225px;
+
+    		.scrim {
+    			img {
+    				width: 60px;
+    				height: 60px;
+    			}
+    		}
+		}
+	}
+}
+
+@include mobile {
+	.hero {
+		.heroContent {
+			padding: 0 48px;
+			text-align: center;
+		}
+	}
+
+	.nextSteps {
+		.stepsContainer {
+			margin-bottom: 60px;
+			flex-direction: column;
+
+			&.flip {
+				flex-direction: column;
+			}
+
+			.content {
+				width: 100%;
+				margin-top: 20px;
+			}
+
+			.image {
+				width: 100%;
+				height: 198px;
+			}
+		}
+	}
+
+	.alpha {
+		flex-direction: column;
+
+		.content {
+			width: 100%;
+		}
+
+		.video {
+			width: 100%;
+    		height: 225px;
+    		margin-top: 20px;
+
+    		.scrim {
+    			img {
+    				width: 48px;
+    				height: 48px;
+    			}
+    		}
+		}
+	}
+}

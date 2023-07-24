@@ -1,0 +1,74 @@
+.kidsContainer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding: 120px 20px;
+	overflow: hidden;
+
+	.content {
+		width: 45%;
+	}
+
+	.blobSmall {
+		position: absolute;
+		left: -25%;
+		top: 0;
+		transform: scale(0.5);
+		z-index: -1;
+
+		svg {
+			path {
+				fill: $green;
+				fill-opacity: 0.3;
+			}
+			
+		}
+	}
+
+	.blobTiny {
+		position: absolute;
+		left: 5%;
+		top: -10%;
+		transform: scale(0.15) rotate(180deg);
+		z-index: -1;
+
+		svg {
+			path {
+				fill: $yellow-dark;
+				fill-opacity: 0.5;
+			}
+			
+		}
+	}
+
+	.blobLarge {
+		position: absolute;
+		right: -25%;
+		top: -10%;
+		transform: scale(0.8);
+		z-index: -1;
+
+		svg {
+			path {
+				fill: $blue;
+				fill-opacity: 0.5;
+			}
+			
+		}
+	}
+}
+
+@include mobile {
+	.kidsContainer {
+		flex-direction: column;
+		padding: 60px 20px;
+
+		.content {
+			width: 100%;
+
+			&:first-child {
+				margin-bottom: 48px;
+			}
+		}
+	}
+}

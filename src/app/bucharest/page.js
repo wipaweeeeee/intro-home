@@ -48,7 +48,7 @@ export default function Bucharest() {
         <h5 className="body-2 mb-40">Daniel, Alina, Esme</h5>
         <p>{data.familyContent}</p>
       </ContentHalf>
-      <BannerArrow content={data.helpTitle} />
+      <BannerArrow content={data.helpTitle} variant='sm' />
       <div className={styles.splitContent}>
         <AnimateDiv className={styles.text}>
           <h2 className="editorial-3 mb-40">{data.helpOneTitle}</h2>

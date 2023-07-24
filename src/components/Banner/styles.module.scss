@@ -32,6 +32,12 @@
 	}
 }
 
+@include tablet {
+	.bannerContainer {
+		height: 68px;
+	}
+}
+
 @include mobile {
 	.bannerContainer {
 		font-size: 18px;

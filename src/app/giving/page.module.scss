@@ -79,3 +79,106 @@
 		}
 	}
 }
+
+@include tablet {
+	.givingPage {
+		.hero {
+			.title {
+				img {
+					width: 48px;
+					height: 48px;
+				}
+			}
+		}
+
+		.content {
+			flex-direction: column;
+			padding: 48px 20px;
+
+			.title {
+				width: 100%;
+				max-width: 320px;
+			}
+
+			.options {
+				width: 100%;
+				margin-top: 32px;
+
+				.option {
+					text-align: center;
+					max-width: 300px;
+					margin-right: 60px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		.download {
+			.downloadContent {
+				padding-left: 32px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.givingPage {
+		.hero {
+			padding: 48px 20px;
+
+			.title {
+				img {
+					width: 28px;
+					height: 28px;
+				}
+			}
+
+			button {
+				&:last-child {
+					margin-top: 12px;
+				}
+			}
+		}
+
+		.content {
+			flex-direction: column;
+			padding: 48px 20px;
+
+			.title {
+				width: 100%;
+				max-width: none;
+				text-align: center;
+			}
+
+			.options {
+				width: 100%;
+				margin-top: 32px;
+				flex-direction: column;
+
+				.option {
+					width: 100%;
+					max-width: unset;
+					margin-bottom: 20px;
+					margin-right: 0;
+				}
+			}
+		}
+
+		.download {
+			flex-direction: column;
+
+			.image {
+				width: 100%;
+			}
+
+			.downloadContent {
+				width: 100%;
+				padding-left: 0;
+				margin-top: 20px;
+			}
+		}
+	}
+}

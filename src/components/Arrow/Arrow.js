@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import styles from './styles.module.scss';
+import classNames from 'classnames';
 
-const Arrow = () => {
+const Arrow = ({ variant = 'horizontal' }) => {
 
 	const [ hover, setHover ] = useState(false);
+	const [ selected, setSelected ] = useState(false);
 
 	return (
 		<svg 
-			className={styles.arrow}
+			className={classNames(styles.arrow, styles[variant], {[styles.active] : selected})}
+			onClick={() => setSelected(!selected)}
 			onMouseOver={() => setHover(true)}
 			onMouseOut={() => setHover(false)}
 			width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"

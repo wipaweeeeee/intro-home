@@ -25,7 +25,8 @@ export default function Home() {
   const [ forms, setForms ] = useState({
     visit: false,
     group: false,
-    prayer: false
+    prayer: false,
+    popup: false
   })
   
 
@@ -62,14 +63,54 @@ export default function Home() {
     setOpenForm(false)
   }
 
+  const handleFormMobile = (title) => {
+    if (openForm) {
+      setOpenForm(false);
+      setSelectedCourse(null);
+    } else {
+      setSelectedCourse(title);
+      setOpenForm(true);
+    }
+  }
+
   const selectedCourseData = data.growForm.filter(item => item.title == selectedCourse)[0];
 
   const growList = data.growForm.map((item, index) => {
     return (
       <li key={index} className={classNames(styles.listItem, {[styles.selected] : item.title == selectedCourse})} onClick={() => handleCourseSelect(item.title)}>
-        <span>{item.title}</span>
+        <span>{item.formTitle}</span>
         <Arrow onClick={() => handleCourseSelect(item.title)}/>
       </li>
+    )
+  })
+
+
+  const growListMobile = data.growForm.map((item, index) => {
+    return (
+      <>
+        <li key={index} className={classNames(styles.listItem, {[styles.selected] : item.title == selectedCourse})} onClick={() => handleFormMobile(item.title)}>
+          <span>{item.title}</span>
+          <Arrow onClick={() => handleCourseSelect(item.title)} variant='vertical' />
+        </li>
+        <AnimatePresence>
+          {
+            (openForm && item.title == selectedCourse) && (
+              <motion.div 
+                className={styles.formMobile}
+                initial={{ y: '-100%', height: '0', paddingTop: 0, opacity: 0}}
+                animate={{ y: '0', height: '100%', paddingTop: 20, opacity: 1,  transition: { duration: 0.25, ease: 'easeIn' }}}
+                exit={{ y: '-100%', height: '0', paddingTop: 0, opacity: 0, transition: { duration: 0.25, ease: 'easeOut' }}}
+              >
+                <FormHalf 
+                  title={item.formTitle} 
+                  desc={item.content} 
+                  formTitle={item.formTitle}
+                />
+              </motion.div>
+            )
+          }
+        </AnimatePresence>
+      </>
     )
   })
 
@@ -98,6 +139,26 @@ export default function Home() {
         desc={data.visitonFormContent}
         cities
         locations
+      />
+      <div className={styles.popup} onClick={() => setForms({ ...forms, popup: true })}>
+        <Image
+            src={`/assets/images/homepagePopup.png`}
+            alt={'popup'}
+            width={120}
+            height={120}
+            priority
+            className={styles.image}
+        />
+      </div>
+      <Form 
+        id="popup" 
+        show={forms.popup} 
+        handleClose={() => setForms({ ...forms, popup: false })}
+        title={data.popupFormTitle}
+        formTitle="popup"
+        desc={data.popupFormContent}
+        phone
+        message
       />
       <div className={styles.connect}>
         <AnimateDiv>
@@ -167,10 +228,11 @@ export default function Home() {
           <AnimateDiv>
           <h3 className={classNames("editorial-1", styles.title)}>{data.growTitle}</h3>
           <ul className={styles.list}>
-            {growList}
+            {!appContext.media.mob && growList}
+            {appContext.media.mob && growListMobile}
             <li>
               <Link href="" target="_blank">{data.growResource}</Link>
-              <Arrow />
+              <Arrow variant={appContext.media.mob ? 'vertical' : null}/>
             </li>
           </ul>
           </AnimateDiv>

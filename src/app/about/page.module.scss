@@ -44,6 +44,7 @@
 		.columnContainer {
 			width: calc(33% - 60px);
 			z-index: 1;
+			position: relative;
 
 			&.second {
 				margin-left: calc(33% + 60px);
@@ -64,7 +65,7 @@
 		top: -20%;
 		left: 0;
 		z-index: 0;
-		transform: translateX(-37%) rotate(-22deg);
+		transform: translateX(-37%) rotate(-28deg);
 		width: 100vw;
 		height: auto;
 	}
@@ -75,8 +76,12 @@
 		left: 0;
 		z-index: 0;
 		transform: scaleY(0.8) translateX(-10%);
-		width: 100vw;
+		width: 120vw;
 		height: auto;
+
+		svg {
+			width: 100%;
+		}
 	}
 }
 
@@ -177,10 +182,39 @@
 			}
 		}
 	}
+
+	.vision { 
+		.visionContent {
+			.columnContainer {
+				width: calc(33% - 32px);
+
+				&.second {
+					margin-left: calc(33% + 32px);
+				}
+
+				&.third {
+					margin-left: calc(66% + 32px);
+				}
+
+			}
+		}
+	}
+
+	.values {
+		.valueRow {
+			.valueItem {
+				width: calc(25% - 32px);
+			    margin-right: 32px;
+			    margin-bottom: 48px;
+			}
+		}
+	}
 }
 
 @include mobile {
 	.heroContent { 
+		margin: 0 auto;
+
 		.celebrate {
 			&:after {
 				max-width: 206px;
@@ -196,6 +230,52 @@
 				left: -45px;
 				transform: scale(0.8);
 			}
+		}
+	}
+
+	.vision { 
+		.visionContent {
+			.columnContainer {
+				width: 100%;
+
+				&.second {
+					margin-left: 0;
+				}
+
+				&.third {
+					margin-left: 0;
+				}
+
+			}
+		}
+	}
+
+	.values {
+		.valueRow {
+			.valueItem {
+				width: calc(50% - 24px);
+			    margin-right: 24px;
+			    margin-bottom: 48px;
+
+			    &:nth-child(2n) {
+			    	width: 50%;
+			    	margin-right: 0;
+			    }
+			}
+		}
+
+		.splitContainer {
+			flex-direction: column;
+
+			.splitColumn {
+				width: 100%;
+			}
+		}
+	}
+
+	.notes {
+		div {
+			width: 75%;
 		}
 	}
 }

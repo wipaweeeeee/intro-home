@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { useForm } from "react-hook-form";
 import TextInput from '../FormElem/TextInput';
@@ -20,6 +21,27 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 		console.log(formData);
 	}
 
+	const ref = useRef();
+
+	useEffect(() => {
+
+	  const handler = (event) => {
+	    if (!ref.current) {
+	      return;
+	    }
+
+	    if (!ref.current.contains(event.target)) {
+	      handleClose(); 
+	      reset();
+	    }
+	  };
+
+	  document.addEventListener("click", handler, true);
+	  return () => {
+	    document.removeEventListener("click", handler);
+	  };
+	}, []);
+
 	return (
 			<AnimatePresence>
 		{
@@ -32,7 +54,7 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
                     exit={{ opacity: 0, transition: { duration: 0.25, ease: 'easeOut' }}}
 				>
 					<img src="/assets/images/close.svg" className={styles.close} onClick={() => {handleClose(); reset();}}/>
-					<div className={styles.formFields}>
+					<div className={styles.formFields} ref={ref}>
 						<div className={styles.intro}>
 							<h3 className="body-2 caps">{title}</h3>
 						</div>

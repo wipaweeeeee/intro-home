@@ -2,6 +2,8 @@ let content = {
   en: {
     heroContent: <span>Experience God, find your purpose and <br /> make a difference into society!</span>,
     planVisit: "plan your visit",
+    popupFormTitle: "Connect with us",
+    popupFormContent: "We would be glad to meet you and tell you more about us. This place is for everyone. You will certainly find friendship and encouragement here.",
     visitFormTitle: "plan your visit",
     visitFormContent: "We invite you to experience a community that accepts and loves anyone even before meeting her or him.",
     connect: <span>connect</span>,

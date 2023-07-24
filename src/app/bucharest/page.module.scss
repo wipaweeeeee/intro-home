@@ -35,3 +35,35 @@
 		}
 	}
 }
+
+@include mobile {
+	.splitContent {
+		.text {
+			width: 65%;
+			margin-bottom: 48px;
+		}
+
+		.image {
+			width: 35%;
+			padding: 0 12px;
+			margin-bottom: 48px;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.valueContainer {
+		padding: 48px 20px;
+
+		.valueRow {
+			.valueItem {
+				width: 100%;
+				margin-right: 0;
+				margin-top: 32px;
+			}
+		}
+	}
+}

@@ -80,3 +80,32 @@
 		}
 	}
 }
+
+@include mobile {
+	.faqContainer { 
+		flex-direction: column-reverse;
+
+		.left, .right {
+			width: 100%;
+		}
+
+		.right {
+			height: 360px;
+			border-left: none;
+			padding: 20px;
+		}
+
+		.left { 
+			.titleContainer {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				border-bottom: none;
+
+				img {
+					width: 24px;
+					height: 24px;
+				}
+			}
+		}
+	}
+}

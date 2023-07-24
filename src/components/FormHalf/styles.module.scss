@@ -49,3 +49,24 @@
 		}
 	}
 }
+
+@include mobile {
+	.formHalfContainer {
+		.intro {
+			padding: 0 0 20px;
+			
+			h3 {
+				margin-bottom: 20px;
+			}
+
+			p {
+				text-transform: none;
+			}
+		}
+
+		.form {
+			width: calc(100% + 40px);
+			margin-left: -20px;
+		}
+	}
+}

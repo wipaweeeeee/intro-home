@@ -8,8 +8,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../../config/Store';
 import content from './content.js';
-
-//TODO: fix mobile glitch
+import { motion } from 'framer-motion'
 
 const Nav = () => {
 
@@ -26,6 +25,17 @@ const Nav = () => {
 		}))
 	}
 
+	const variants = {
+	    show: {
+	      x: '0%',
+	      transition: { duration: 0.25, ease: 'easeIn' }
+	    },
+	    hide: {
+	      x: '100%',
+	      transition: { duration: 0.25, ease: 'easeIn' }
+	    }
+	  }
+
 	return (
 		<div className={styles.navContainer}>
 			<Link href="/">
@@ -39,7 +49,7 @@ const Nav = () => {
 	            />
             </Link>
             {
-            	!appContext.media.mob && 
+            	(!appContext.media.mob && appContext.media.mob !== undefined) && 
             	<>
             		<ul className={styles.list}>
 		            	<li className={classNames({[styles.active] : currentPage == "/locations"})}>
@@ -86,25 +96,30 @@ const Nav = () => {
 			              	priority
 			            />
 			        </div>
-		            <div className={classNames(styles.mobMenuContainer, {[styles.open] : open})}>
+		            <motion.div 
+		            	initial={variants.hide}
+		            	variants={variants}
+		            	animate={open ? 'show' : 'hide'}
+		            	className={styles.mobMenuContainer}
+		            >
 		            	<ul className={styles.listMob}>
-			            	<li className={classNames({[styles.active] : currentPage == "/locations"})}>
+			            	<li className={classNames({[styles.active] : currentPage == "/locations"})} onClick={() => setOpen(!open)}>
 			            		<Link href="/locations">{data.locations}</Link>
 			            	</li>
-			            	<li className={classNames({[styles.active] : currentPage == "/about"})}>
+			            	<li className={classNames({[styles.active] : currentPage == "/about"})} onClick={() => setOpen(!open)}>
 			            		<Link href="/about">{data.about}</Link>
 			            	</li>
-			            	<li className={classNames({[styles.active] : currentPage == "/intro-life"})}>
+			            	<li className={classNames({[styles.active] : currentPage == "/intro-life"})} onClick={() => setOpen(!open)}>
 			            		<Link href="intro-life">{data.intro_life}</Link>
 			            	</li>
-			            	<li className={classNames({[styles.active] : currentPage == "/connect"})}>
+			            	<li className={classNames({[styles.active] : currentPage == "/connect"})} onClick={() => setOpen(!open)}>
 			            		<Link href="/connect">{data.connect}</Link>
 			            	</li>
-			            	<li className={classNames({[styles.active] : currentPage == "/what-to-expect"})}>
+			            	<li className={classNames({[styles.active] : currentPage == "/what-to-expect"})} onClick={() => setOpen(!open)}>
 			            		<Link href="/what-to-expect">{data.what_to_expect}</Link>
 			            	</li>
-			            	<li className={classNames({[styles.active] : currentPage == "/donate"})}>
-			            		<Link href="/donate">{data.donate}</Link>
+			            	<li className={classNames({[styles.active] : currentPage == "/donate"})} onClick={() => setOpen(!open)}>
+			            		<Link href="/giving">{data.donate}</Link>
 			            	</li>
 			            </ul>
 			            <div className={styles.lang}>
@@ -118,7 +133,7 @@ const Nav = () => {
 			            		className={appContext.lang == 'ro' ? styles.active : null}
 			            	>RO</span>
 			            </div>
-		            </div>
+		            </motion.div>
 		       	</>
             }
 		</div>
