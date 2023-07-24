@@ -108,7 +108,7 @@ export default function Home() {
 
   return (
     <div className={styles.main}>
-      <HeroHalf color="orange" video="homeVid" className={styles.hero}>
+      <HeroHalf color="orange" video="homevid" className={styles.hero}>
         <motion.div 
           className={styles.track}
           variants={trackAnim}
