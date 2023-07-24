@@ -40,6 +40,18 @@
 	}
 }
 
+@include tablet {
+	.footerContainer {
+		.bookend {
+			.links {
+				li {
+					margin-right: 12px;
+				}
+			}
+		}
+	}
+}
+
 @include mobile {
 	.footerContainer { 
 		padding-top: 48px;

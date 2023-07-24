@@ -26,7 +26,7 @@ export default function Bucharest() {
 
   const [ showForm, setShowForm ] = useState(false);
 
-  const values = data.values.map((item, index) => {
+  const values = data.values && data.values.map((item, index) => {
     return (
       <div key={index} className={styles.valueItem}>
         <span className="editorial-4">{item.count}</span>

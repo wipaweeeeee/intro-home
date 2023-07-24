@@ -175,3 +175,114 @@
 	padding: 60px 20px;
 	text-align: center;
 }
+
+@include tablet {
+	.newHero {
+		.image {
+			width: 420px;
+			height: 260px;
+		}
+
+		.social {
+			margin-left: auto;
+			margin-top: -48px;
+		}
+	}
+
+	.involve {
+		.involveContent {
+			.image {
+				margin-top: 32px;
+				width: 420px;
+				height: 260px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.newHero {
+		padding: 48px 20px;
+
+		.content, .image {
+			width: 100%;
+			max-width: unset;
+		}
+
+		.image {
+			width: 350px;
+			height: 230px;
+			margin: 48px auto 20px;
+		}
+
+		.social {
+			margin-right: auto;
+			margin-left: 0;
+		}
+	}
+
+	    .groups {
+	    	padding: 0px 20px 48px;
+
+	      .title {
+	        flex-direction: column;
+	        align-items: flex-start;
+	        margin-bottom: 20px;
+
+	        p {
+	          margin: 8px 0;
+	        }
+	      }
+
+	      .options {
+	        flex-direction: column;
+	        margin-bottom: 20px;
+
+	        img {
+	          width: 70%;
+	          margin: 0 auto 40px; 
+	        }
+	      }
+    }
+
+    .values {
+		.valueRow {
+			.valueItem {
+				width: calc(50% - 24px);
+			    margin-right: 24px;
+			    margin-bottom: 48px;
+
+			    &:nth-child(2n) {
+			    	width: 50%;
+			    	margin-right: 0;
+			    }
+			}
+		}
+
+		.splitContainer {
+			flex-direction: column;
+
+			.splitColumn {
+				width: 100%;
+			}
+		}
+	}
+
+	.involve {
+		padding: 48px 20px;
+
+		.involveContent {
+			flex-direction: column-reverse;
+
+			.image {
+				width: 350px;
+				height: 210px;
+				margin-bottom: 48px;
+			}
+
+			.content {
+				width: 100%;
+			}
+		}
+	}
+}

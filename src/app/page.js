@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -28,25 +28,17 @@ export default function Home() {
     prayer: false,
     popup: false
   })
-  
 
   let data = content[appContext.lang];
 
-  const track = useRef();
-
-  useEffect(() => {
-    let width = window.innerWidth / 2;
-    setTrackWidth(track.current.clientWidth - width + 100);
-  },[])
-
   const trackAnim = {
     animate: {
-      x: [0, -trackWidth],
+      x: ['-10%', '-90%'],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 5,
+          duration: 25,
           ease: "linear",
         },
       },
@@ -122,7 +114,7 @@ export default function Home() {
           variants={trackAnim}
           animate="animate"
         >
-          <h1 className="display-1 caps" ref={track}>Welcome to Welcome to</h1>
+          <h1 className="display-1 caps" style={{display: 'inline-block'}}>Welcome to Welcome to Welcome to Welcome to Welcome to Welcome to Welcome to</h1>
         </motion.div>
         <h1 className={classNames("display-1 caps", styles.heroTitle)}>church</h1>
         <div className={styles.heroContent}>

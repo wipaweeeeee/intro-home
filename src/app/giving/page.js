@@ -42,7 +42,7 @@ export default function Giving() {
         </div>
         <p className="mb-60">{data.givingContent}</p>
         <Button variant="secondary-dark" className="mr-20" onClick={() => setShowBank(!showBank)}>{data.givingCTAsecondary}</Button>
-        <Button variant="primary" onClick={() => router.push('/')}>{data.givingCTA}</Button>
+        <Button variant="primary" onClick={() => router.push('')}>{data.givingCTA}</Button>
       </div>
       <motion.div 
         initial={false}

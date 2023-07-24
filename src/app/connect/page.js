@@ -46,7 +46,7 @@ export default function Connect() {
   		}
   	}
 
-  	const nextStep = data.steps.map((item, index) => {
+  	const nextStep = data.steps && data.steps.map((item, index) => {
 
   		const handleForm = (title) => {
   			if (title == 'introHome') {

@@ -18,7 +18,7 @@ export default function About() {
   const { appContext }  = useAppContext();
   let data = content[appContext.lang];
 
-  const values = data.values.map((item, index) => {
+  const values = data.values && data.values.map((item, index) => {
     return (
       <div key={index} className={styles.valueItem}>
         <span className="editorial-4">{item.count}</span>
@@ -28,15 +28,15 @@ export default function About() {
     )
   })
 
-  const believesLeft = data.believesLeft.map((item, index) => {
+  const believesLeft = data.believesLeft && data.believesLeft.map((item, index) => {
     return <p key={index}>{item}</p>
   })
 
-  const believesRight = data.believesRight.map((item, index) => {
+  const believesRight = data.believesRight && data.believesRight.map((item, index) => {
     return <p key={index}>{item}</p>
   })
 
-  const notes = data.notes.map((item, index) => {
+  const notes = data.notes && data.notes.map((item, index) => {
     return <p key={index}>{item}</p>
   })
 

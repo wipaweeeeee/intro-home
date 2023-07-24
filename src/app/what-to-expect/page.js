@@ -53,15 +53,15 @@ export default function About() {
 
   useEffect(() => {
     if (selected !== null) {
-      let imageData = data.list.filter(item => item.question == selected)[0].image;
+      let imageData = data.list && data.list.filter(item => item.question == selected)[0].image;
       setImage(imageData);
     }
   },[selected])
 
 
-  let length = data.list.length;
+  let length = data.list && data.list.length;
 
-  const questions = data.list.map((item, index) => {
+  const questions = data.list && data.list.map((item, index) => {
     return (
       <div key={index} className={styles.questionRow}>
         <div className={styles.question} onClick={() => handleClick(item.question)}>
