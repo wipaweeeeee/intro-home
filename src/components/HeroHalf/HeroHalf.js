@@ -11,7 +11,7 @@ const HeroHalf = ({color, image, video, className, children}) => {
 			</div>
 			<div 
 				className={styles.imageContainer} 
-				style={{backgroundImage: `url(/assets/images/${image}.jpg)`}}
+				style={{ backgroundImage: image ? `url(/assets/images/${image}.jpg)` : null }}
 			>
 				{
 					video && 
