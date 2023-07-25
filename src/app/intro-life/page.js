@@ -11,6 +11,7 @@ import Banner from '../../components/Banner'
 import Form from '../../components/Form'
 import AnimateBlob from '../../components/AnimateBlob'
 import styles from './styles.module.scss';
+import AnimateDiv from '../../components/AnimateDiv';
 
 export default function IntroLife() {
 
@@ -25,10 +26,12 @@ export default function IntroLife() {
   return (
     <main>
       <HeroHalf color="blue" image="welcomeHome">
-        <h1 className="display-3 caps mb-10">{data.heroTitle}</h1>
-        <p className="mb-20">{data.heroContent1}</p>
-        <p className="mb-60">{data.heroContent2}</p>
-        <Button variant="primary" onClick={() => setForms({ ...forms, visit: true })}>{data.heroCTA}</Button>
+        <AnimateDiv>
+          <h1 className="display-3 caps mb-10">{data.heroTitle}</h1>
+          <p className="mb-20">{data.heroContent1}</p>
+          <p className="mb-60">{data.heroContent2}</p>
+          <Button variant="primary" onClick={() => setForms({ ...forms, visit: true })}>{data.heroCTA}</Button>
+        </AnimateDiv>
       </HeroHalf>
       <Form 
         id="plan visit" 
@@ -58,14 +61,14 @@ export default function IntroLife() {
       />
       <Banner color="yellow-dark" icon="star">{data.banner}</Banner>
       <div className={styles.kidsContainer}>
-        <div className={styles.content}>
+        <AnimateDiv className={styles.content}>
           <h4 className="display-3 mb-40">{data.youthTitle}</h4>
           <p>{data.youthContent}</p>
-        </div>
-        <div className={styles.content}>
+        </AnimateDiv>
+        <AnimateDiv className={styles.content}>
           <h4 className="display-3 mb-40">{data.kidsTitle}</h4>
           <p>{data.kidsContent}</p>
-        </div>
+        </AnimateDiv>
         <AnimateBlob className={styles.blobSmall} />
         <AnimateBlob className={styles.blobTiny} />
         <AnimateBlob className={styles.blobLarge} />

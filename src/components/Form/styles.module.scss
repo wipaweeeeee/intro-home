@@ -23,6 +23,7 @@
 		width: 70%;
 		max-width: 760px;
 		border: 1px solid black;
+		z-index: 1;
 
 		.intro {
 			padding: 20px 20px;
@@ -81,6 +82,36 @@
 					background-color: transparent;
 					color: $black;
 				}
+			}
+		}
+	}
+
+	.blobSmall {
+		position: absolute;
+		bottom: -15%;
+		left: -15%;
+		transform: scale(0.7);
+		z-index: 0;
+
+		svg {
+			path {
+				fill: $orange;
+				fill-opacity: 0.2;
+			}
+		}
+	}
+
+	.blobBig {
+		position: absolute;
+		top: -20%;
+		right: -10%;
+		transform: rotate(180deg);
+		z-index: 0;
+
+		svg {
+			path {
+				fill: $orange;
+				fill-opacity: 0.2;
 			}
 		}
 	}

@@ -31,18 +31,20 @@ export default function Giving() {
   return ( 
     <div className={styles.givingPage}>
       <div className={styles.hero}>
-        <div className={styles.title}>
-          <h1 className="display-2 caps mr-8">{data.givingTitle}</h1>
-          <Image
-                src={`/assets/images/heart.svg`}
-                alt={'heart'}
-                width={70}
-                height={70}
-            />
-        </div>
-        <p className="mb-60">{data.givingContent}</p>
-        <Button variant="secondary-dark" className="mr-20" onClick={() => setShowBank(!showBank)}>{data.givingCTAsecondary}</Button>
-        <Button variant="primary" onClick={() => router.push('')}>{data.givingCTA}</Button>
+        <AnimateDiv>
+          <div className={styles.title}>
+            <h1 className="display-2 caps mr-8">{data.givingTitle}</h1>
+            <Image
+                  src={`/assets/images/heart.svg`}
+                  alt={'heart'}
+                  width={70}
+                  height={70}
+              />
+          </div>
+          <p className="mb-60">{data.givingContent}</p>
+          <Button variant="secondary-dark" className="mr-20" onClick={() => setShowBank(!showBank)}>{data.givingCTAsecondary}</Button>
+          <Button variant="primary" onClick={() => router.push('')}>{data.givingCTA}</Button>
+        </AnimateDiv>
       </div>
       <motion.div 
         initial={false}

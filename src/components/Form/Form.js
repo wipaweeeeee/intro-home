@@ -7,6 +7,7 @@ import RadioInput from '../FormElem/RadioInput';
 import Button from '../Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import classNames from 'classnames';
+import AnimateBlob from '../AnimateBlob';
 
 const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations, phone, message, prayers }) => {
 
@@ -91,6 +92,8 @@ const Form = ({ title, desc, formTitle, show, id, handleClose, cities, locations
 							</div>
 						</form>
 					</div>
+					<AnimateBlob className={styles.blobSmall}/>
+					<AnimateBlob className={styles.blobBig}/>
 				</motion.div>
 			)
 		}

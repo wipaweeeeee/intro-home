@@ -146,6 +146,9 @@
 		}
 
 		.content {
+			display: flex;
+			flex-direction: column;
+			
 			button {
 				margin-bottom: 20px;
 			}

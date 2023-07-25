@@ -2,9 +2,13 @@ let content = {
   en: {
     heroTitle: "You are welcome in our community no matter what you think or what your past has been",
     heroCTA: "i am new",
+    connectFormTitle: "WELCOME HOME!",
+    connectFormContent: "We would be glad to meet you and tell you more about us. This place is for everyone. You will certainly find friendship and encouragement here.",
     groupsTitle: "intro groups",
     groupsContent: "Intro Groups are the roots of our church. We wish you to connect with other people, find your place in the community, make new friends and grow your relationship with Jesus. Intro Groups are small groups with maximum 10-12 members who meet constantly in different locations or online. With the help of Intro Groups we're building a familiar setting, we enjoy life together with one another and learn more about Jesus.",
     groupsCTA: "join a group",
+    groupFormTitle: "JOIN A GROUP!", 
+    groupFormContent: "Experience the friendship, growth and the joy of belonging to the place you have always looked for.",
     banner: "We were created for the community",
     values: [
       { count: "01",
@@ -38,8 +42,14 @@ let content = {
     ],
     involveTitle: "Ways to get involved",
     involveCTA1: "join a team",
+    teamFormTitle: "BE PART OF A TEAM!",
+    teamFormContent: "We believe we have the best teams. We love our volunteers the most, because nothing could be done without them. Be one of them! Give yourself a chance to find out what you are doing very, very well.",
     involveCTA2: "social impact",
+    impactFormTitle: "Get involved for the needs of others",
+    impactFormContent: "Your time, your ideas, your resources, your qualities can make a huge difference when they are added to a team. Let's make a major change together.",
     involveCTA3: "start a group in my city",
+    startGroupFormTitle: "I want to start a group",
+    startGroupFormContent: "We can't wait to meet you, to hear what God has put in your heart and to support you. We are convinced that together we can make big changes in the places we are.",
     questionTitle: <span>Got questions? <br /> We got answers!</span>,
     questionCTA: "what to expect",
     bannerBottom: "WE’RE SO EXCITED TO MEET YOU!"
